@@ -22,6 +22,54 @@
 .featured-music p {
   color: #526b89;
   font-size: 14px;
+}.music-cards {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.music-card {
+  background: white;
+  width: 145px;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px #b5cce8;
+}
+
+.music-cover {
+  background: linear-gradient(135deg, #003b91, #087bff);
+  color: white;
+  font-size: 40px;
+  padding: 20px;
+  border-radius: 12px;
+}.music-cards {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.music-card {
+  background: white;
+  width: 145px;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px #b5cce8;
+  .music-card h3 {
+  color: #0866cc;
+  font-size: 15px;
+  margin: 10px 0 5px;
+}
+
+.music-card p {
+  color: #526b89;
+  font-size: 13px;
+  margin: 0;
 }
 <style>
 * {
@@ -213,12 +261,6 @@ body {
   background: white;
   margin: 15px auto 0;
   border-radius: 10px;
-  }
-</style>
-
-Este código melhora as cores, os botões e o aspecto do reprodutor, sem alterar as músicas.
-
-Quando terminares, avisa-me. Depois avançamos para as capas das músicas.
 </style>
 </head>
 body {
@@ -324,6 +366,19 @@ oninput="pesquisar()">
   <h2>🎵 Músicas em destaque</h2>
   <p>Descobre os teus sons favoritos no DELINNE MUSIC.</p>
 </section>
+  <div class="music-cards">
+  <div class="music-card">
+    <div class="music-cover">🎵</div>
+    <h3>Richie Campbell</h3>
+    <p>Let You Go</p>
+  </div>
+
+  <div class="music-card">
+    <div class="music-cover">🎧</div>
+    <h3>Post Malone</h3>
+    <p>Sunflower</p>
+  </div>
+  </div>
 <br><div class="music-player">
   <h3>Richie Campbell - Let You Go</h3>
 
