@@ -165,7 +165,90 @@ oninput="pesquisar()">
     <source src="https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/f52ff4393772a005d41ad1381f9fba480203a836/Richie%20Campbell%20-%20Let%20You%20Go%20(Official%20Video)_1788082796085.mp3" type="audio/mpeg">
     O teu navegador não suporta áudio.
   </audio>
+</div><div class="music-player">
+  <h2>🎵 DELINNE MUSIC</h2>
+  <p id="song-title">Escolha uma música</p>
+
+  <audio id="audio" controls style="width:100%"></audio>
+
+  <div class="controls">
+    <button onclick="previousSong()">⏮ Anterior</button>
+    <button onclick="playPause()">▶ Play / Pause</button>
+    <button onclick="nextSong()">Seguinte ⏭</button>
+  </div>
+
+  <h3>Lista de músicas</h3>
+  <div id="playlist"></div>
 </div>
+
+<script>
+const songs = [
+  ["Richie Campbell - Let You Go",
+  "https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/main/Richie%20Campbell%20-%20Let%20You%20Go%20(Official%20Video)_1788082796085.mp3"],
+
+  ["STAY - Sad Drill Type Beat",
+  "https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/main/Sad%20Drill%20Type%20Beat%20-%20STAY%20(Prod.%20Evi%20Beats)_1788097690246.mp3"],
+
+  ["Post Malone, Swae Lee - Sunflower",
+  "https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/main/Post%20Malone%2C%20Swae%20Lee%20-%20Sunflower%20(Spider-Man-%20Into%20the%20Spider-Verse)_1788082967813.mp3"],
+
+  ["Plutonio - Pensamento",
+  "https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/main/Plutonio%20ft%20Vulgo%20FK%20%26%20Portugal%20no%20Beat%20-%20Pensamento%20(Visual)_1788082565721.mp3"],
+
+  ["Plutonio - Mesmo Sítio",
+  "https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/main/Plutonio%20-%20Mesmo%20S%C3%ADtio_1788082556608.mp3"],
+
+  ["Juice WRLD - Wishing Well",
+  "https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/main/Juice%20WRLD%20-%20Wishing%20Well%20(Official%20Music%20Video)_1788098711746.mp3"],
+
+  ["Emerson Neto feat. Black Spygo - Poção",
+  "https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/main/Emerson%20Neto%20feat.%20Black%20Spygo%20-%20Po%C3%A7%C3%A3o%20(%C3%81udio%20Oficial)%202022_1788083147117.mp3"],
+
+  ["T-Rex - NORMAL",
+  "https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/main/T-Rex%20-%20NORMAL%20(V%C3%ADdeo%20Oficial)_1788082857823.mp3"],
+
+  ["Travis Scott - YOSEMITE",
+  "https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/main/Travis%20Scott%20-%20YOSEMITE%20(Audio)_1788097537839.mp3"],
+
+  ["she goes by. - KayArchon Remix",
+  "https://raw.githubusercontent.com/ZaraBy196724Emidio/Delinne-Music/main/she%20goes%20by.%20(KayArchon%20Remix)_1788082268788.mp3"]
+];
+
+let currentSong = 0;
+const audio = document.getElementById("audio");
+
+function loadSong(index) {
+  currentSong = index;
+  audio.src = songs[index][1];
+  document.getElementById("song-title").textContent = songs[index][0];
+  audio.play();
+}
+
+function playPause() {
+  if (audio.paused) audio.play();
+  else audio.pause();
+}
+
+function nextSong() {
+  loadSong((currentSong + 1) % songs.length);
+}
+
+function previousSong() {
+  loadSong((currentSong - 1 + songs.length) % songs.length);
+}
+
+songs.forEach((song, index) => {
+  const button = document.createElement("button");
+  button.textContent = song[0];
+  button.style.display = "block";
+  button.style.width = "100%";
+  button.style.margin = "8px 0";
+  button.onclick = () => loadSong(index);
+  document.getElementById("playlist").appendChild(button);
+});
+
+audio.addEventListener("ended", nextSong);
+</script>
 <button onclick="alert('Adiciona músicas para reprodução!')">
 ▶ Reproduzir
 </button>
