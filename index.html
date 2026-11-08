@@ -105,10 +105,115 @@ footer {
   text-align: center;
   padding: 25px;
   color: #9db2d0;
+}Vamos dar ao DELINNE MUSIC um visual mais profissional! 🎧
+
+PASSO 1 — Melhorar o design
+
+Abre novamente o index.html no GitHub.
+
+Procura a etiqueta </head>.
+
+Mesmo antes dela, cola este pequeno bloco:
+
+<style>
+body {
+  background: #eef5ff;
+  font-family: Arial, sans-serif;
+  color: #12345a;
+}
+
+.music-player {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 4px 15px #b5cce8;
+}
+
+.music-player h2 {
+  color: #0866cc;
+  text-align: center;
+}
+
+#song-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.controls button,
+#playlist button {
+  background: #0866cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#playlist button {
+  width: 100%;
+  text-align: left;
 }
 </style>
-</head>
 
+Este código melhora as cores, os botões e o aspecto do reprodutor, sem alterar as músicas.
+
+Quando terminares, avisa-me. Depois avançamos para as capas das músicas.
+</style>
+</head>
+body {
+  background: #eef5ff;
+  font-family: Arial, sans-serif;
+  color: #12345a;
+}
+
+.music-player {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 4px 15px #b5cce8;
+}
+
+.music-player h2 {
+  color: #0866cc;
+  text-align: center;
+}
+
+#song-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.controls button,
+#playlist button {
+  background: #0866cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#playlist button {
+  width: 100%;
+  text-align: left;
+}
 <body>
 
 <header>
