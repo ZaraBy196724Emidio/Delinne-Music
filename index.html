@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DELINNE MUSIC</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #07152d;
+  color: white;
+}
+
+header {
+  background: #0d2144;
+  padding: 22px;
+  text-align: center;
+}
+
+header h1 {
+  color: #36a4ff;
+  font-size: 27px;
+}
+
+header p {
+  color: #cbd8eb;
+  margin-top: 7px;
+}
+
+.search {
+  padding: 20px;
+}
+
+.search input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+}
+
+h2 {
+  padding: 15px 20px;
+}
+
+.music {
+  display: flex;
+  align-items: center;
+  background: #12294d;
+  margin: 12px;
+  padding: 15px;
+  border-radius: 12px;
+  gap: 14px;
+}
+
+.cover {
+  width: 60px;
+  height: 60px;
+  background: #1679d3;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.info {
+  flex: 1;
+}
+
+.info p {
+  color: #aabbd2;
+  margin-top: 6px;
+}
+
+button {
+  background: #1688ed;
+  color: white;
+  border: none;
+  padding: 11px 15px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.player {
+  background: #0d2144;
+  margin: 20px 12px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.player p {
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #9db2d0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🎵 DELINNE MUSIC</h1>
+<p>A tua música, o teu mundo.</p>
+</header>
+
+<div class="search">
+<input id="search" type="text"
+placeholder="🔍 Pesquisar músicas ou artistas..."
+oninput="pesquisar()">
+</div>
+
+<h2>🔥 Descobrir músicas</h2>
+
+<div id="lista">
+
+<div class="music">
+<div class="cover">🎵</div>
+<div class="info">
+<h3>Primeira Música</h3>
+<p>Artista DELINNE</p>
+</div>
+<button onclick="tocar('Primeira Música')">▶</button>
+</div>
+
+<div class="music">
+<div class="cover">🎧</div>
+<div class="info">
+<h3>Novidades</h3>
+<p>Novos artistas</p>
+</div>
+<button onclick="tocar('Novidades')">▶</button>
+</div>
+
+<div class="music">
+<div class="cover">🎼</div>
+<div class="info">
+<h3>Top Música</h3>
+<p>DELINNE MUSIC</p>
+</div>
+<button onclick="tocar('Top Música')">▶</button>
+</div>
+
+</div>
+
+<div class="player">
+<p>🎶 REPRODUTOR</p>
+<h3 id="atual">Escolhe uma música</h3>
+<br>
+<button onclick="alert('Adiciona músicas para reprodução!')">
+▶ Reproduzir
+</button>
+</div>
+
+<h2>⭐ DELINNE PREMIUM</h2>
+
+<div class="music">
+<div class="cover">👑</div>
+<div class="info">
+<h3>Plano Premium</h3>
+<p>Experiência musical especial.</p>
+</div>
+</div>
+
+<footer>
+<p>DELINNE MUSIC © 2026</p>
+<p>Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function tocar(nome) {
+ document.getElementById("atual").innerText = nome;
+}
+
+function pesquisar() {
+ let texto = document.getElementById("search")
+ .value.toLowerCase();
+
+ let musicas = document.querySelectorAll(".music");
+
+ musicas.forEach(function(musica) {
+  musica.style.display =
+  musica.innerText.toLowerCase().includes(texto)
+  ? "flex" : "none";
+ });
+}
+</script>
+
+</body>
+  </html>
