@@ -161,7 +161,41 @@ body {
 #playlist button {
   width: 100%;
   text-align: left;
+}.delinne-header {
+  background: linear-gradient(135deg, #003b91, #087bff);
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  border-radius: 0 0 25px 25px;
+  margin-bottom: 25px;
 }
+
+.logo-icon {
+  font-size: 45px;
+}
+
+.delinne-header h1 {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.delinne-header h1 span {
+  color: #b9dcff;
+}
+
+.delinne-header p {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.header-line {
+  width: 60px;
+  height: 4px;
+  background: white;
+  margin: 15px auto 0;
+  border-radius: 10px;
+  }
 </style>
 
 Este código melhora as cores, os botões e o aspecto do reprodutor, sem alterar as músicas.
@@ -215,7 +249,12 @@ body {
   text-align: left;
 }
 <body>
-
+<header class="delinne-header">
+  <div class="logo-icon">🎧</div>
+  <h1>DELINNE <span>MUSIC</span></h1>
+  <p>Ouve • Sente • Vive a Música</p>
+  <div class="header-line"></div>
+</header>
 <header>
 <h1>🎵 DELINNE MUSIC</h1>
 <p>A tua música, o teu mundo.</p>
